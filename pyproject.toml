@@ -1,0 +1,57 @@
+[tool.ruff]
+target-version = "py310"
+line-length = 99
+exclude = [
+    ".git",
+    ".venv",
+    ".idea",
+    ".tests",
+    ".cache",
+    "build",
+    "dist",
+    "scripts",
+]
+
+[tool.ruff.lint]
+select = [
+    "C",
+    "DTZ",
+    "E",
+    "F",
+    "I",
+    "ICN",
+    "N",
+    "PLC",
+    "PLE",
+    "Q",
+    "S",
+    "T",
+    "W",
+    "YTT",
+    "RET",
+    "SIM",
+    "ASYNC",
+    "UP",
+]
+ignore = [
+    "T201",
+    "S311"
+]
+
+[tool.mypy]
+plugins = [
+    "sqlalchemy.ext.mypy.plugin",
+]
+exclude = [
+    ".git",
+    ".venv",
+    ".idea",
+    ".tests",
+    ".cache",
+    "build",
+    "dist",
+]
+
+[[tool.mypy.overrides]]
+module = "selectolax.*"
+ignore_missing_imports = true

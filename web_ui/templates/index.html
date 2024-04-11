@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картотека игр</title>
+</head>
+<body>
+    <h1>Картотека игр</h1>
+    <form id="gameFilterForm">
+        <div>
+            <label for="duration">Продолжительность:</label>
+            <select name="duration" id="duration">
+                <option value="">Выберите продолжительность</option>
+                {% for duration in durations %}
+                <option value="{{ duration }}">{{ duration }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="location">Место проведения:</label>
+            <select name="location" id="location">
+                <option value="">Выберите место проведения</option>
+                {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="theme">Тема:</label>
+            <select name="theme" id="theme">
+                <option value="">Выберите тему</option>
+                {% for theme in themes %}
+                <option value="{{ theme }}">{{ theme }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="button" onclick="filterGames()">Поиск</button>
+    </form>
+    <div id="gamesList"></div>
+<script src="/static/js/script.js"></script>
+</body>
+</html>
