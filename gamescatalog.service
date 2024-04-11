@@ -1,0 +1,14 @@
+[Unit]
+Description=Games Catalog Web-UI
+After=network.target
+
+[Service]
+User=games-catalog-webui
+Group=games-catalog-webui
+Type=simple
+WorkingDirectory=/opt/games-catalog
+ExecStart=/opt/games-catalog/venv/bin/python3 -m web_ui.app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
